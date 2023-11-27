@@ -11,13 +11,14 @@ import lombok.Getter;
 @Getter
 public class AppUser {
     @Id
-    public Integer id;
+    private Integer id;
+    private Integer age;
+
     @Column(unique = true)
-    public String email;
-    public Integer age;
+    private String email;
 
     @Transient
-    public LocalDate dateOfBirth;
+    private LocalDate dateOfBirth;
 
     // Adding a getter for age that calculates age based on dateOfBirth
     public Integer getAge() {

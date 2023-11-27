@@ -3,9 +3,10 @@ package ua.edu.ucu.apps.demo.flowers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
 @RequestMapping("/api/flowers")
@@ -24,7 +25,7 @@ public class FlowerController {
     }
 
     @PostMapping("/add")
-    public void addFlower(@RequestBody Flower flower) {
+    public void addFlower(Flower flower) {
         flowerService.add(flower);
     }
 }
